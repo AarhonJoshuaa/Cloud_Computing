@@ -39,4 +39,5 @@ elif config.ENV == "DEV":
             return string, 200
 
     if __name__ == "__main__":
+        print("running")
         server.run(host=config.host, port=config.port)
