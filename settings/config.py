@@ -1,9 +1,9 @@
 import os
-ENV = "DEV" 
-if ENV == "DEV1":
+ENV = "PROD" 
+if ENV == "DEV":
     from settings import keys
     telegram_key = keys.telegram_key
-elif ENV == "DEV":
+elif ENV == "PROD":
     import ast
     telegram_key = ast.literal_eval(os.environ["telegram_key"])
 host = "0.0.0.0"
