@@ -14,6 +14,8 @@ def _start(message):
 @bot.message_handler(func=lambda message: True)
 def _start1(message):
     msg = message.text
+    if(msg=='apoorva'):
+        bot.send_message(message.chat.id,"🦜 says: Hello Apoorva")
     print(msg)
     bot.send_message(message.chat.id,"🦜 says: "+msg)
     
