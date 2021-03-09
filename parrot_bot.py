@@ -18,10 +18,10 @@ def _start1(message):
     bot.send_message(message.chat.id,"🦜 says: "+msg)
     
     
-if config.ENV == "DEV":
+if config.ENV == "DEV1":
     bot.infinity_polling(True)  
 
-elif config.ENV == "PROD":
+elif config.ENV == "DEV":
     import flask
     server = flask.Flask(__name__)
 
