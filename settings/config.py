@@ -7,4 +7,4 @@ elif ENV == "DEV":
     import ast
     telegram_key = ast.literal_eval(os.environ["telegram_key"])
 host = "0.0.0.0"
-port = int(os.environ.get("PORT", 5000))
+port = int(os.environ.get("PORT", 6000))
