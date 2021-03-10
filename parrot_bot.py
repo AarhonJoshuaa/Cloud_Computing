@@ -1,29 +1,37 @@
 import telebot
 from telebot import types
 from settings import config
+import t_to_s as tos
 bot = telebot.TeleBot(config.telegram_key)
 bot.remove_webhook()
+
 
 @bot.message_handler(commands=['start'])
 def _start(message):
     msg = "Hello "+str(message.chat.username)+", I'm a 🦜. I repeat what you say"
     print(msg)
+    tos.ttos(msg)
     markup = types.ReplyKeyboardRemove(selective=False)
     bot.send_message(message.chat.id,msg,reply_markup=markup)
-    
+    sti = open('sticker.tgs', 'rb')
+    bot.send_sticker(message.chat.id, sti)
 @bot.message_handler(func=lambda message: True)
 def _start1(message):
     msg = message.text
-    if(msg=='apoorva'):
-        bot.send_message(message.chat.id,"🦜 says: Hello Apoorva")
+  
+    if(msg=='CC'):
+        bot.send_message(message.chat.id,"🦜 says: Hello CC") 
+    print(msg)
+    tos.ttos(msg)
     print(msg)
     bot.send_message(message.chat.id,"🦜 says: "+msg)
-    
+    voice = open('audio.mp3', 'rb')
+    bot.send_voice(message.chat.id, voice)
     
 if config.ENV == "DEV":
     bot.infinity_polling(True)  
 
-elif config.ENV == "PROD":
+elif config.ENV == "PROD":  
     import flask
     server = flask.Flask(__name__)
 
