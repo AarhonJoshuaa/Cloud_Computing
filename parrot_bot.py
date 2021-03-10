@@ -18,9 +18,8 @@ def _start(message):
 @bot.message_handler(func=lambda message: True)
 def _start1(message):
     msg = message.text
-  
-   # if(msg=='CC'):
-   #    bot.send_message(message.chat.id,"🦜 says: Hello CC") 
+    if(msg=='CC'):
+        bot.send_message(message.chat.id,"🦜 says: Hello CC") 
     print(msg)
     tos.ttos(msg)
     print(msg)
