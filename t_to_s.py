@@ -13,7 +13,8 @@ def ttos(r):
      
     language = 'en'
     
-    myobj = gTTS(text=mytext, lang=language, slow=True) 
+    myobj = gTTS(text=mytext, lang=language, slow=False) 
     
     myobj.save("audio.mp3") 
 ttos('How you doing')
+s='How you doin'

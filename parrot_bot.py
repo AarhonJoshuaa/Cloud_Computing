@@ -19,13 +19,15 @@ def _start(message):
 def _start1(message):
     msg = message.text
   
-    if(msg=='CC'):
-        bot.send_message(message.chat.id,"🦜 says: Hello CC") 
+   # if(msg=='CC'):
+   #    bot.send_message(message.chat.id,"🦜 says: Hello CC") 
     print(msg)
     tos.ttos(msg)
     print(msg)
-    bot.send_message(message.chat.id,"🦜 says: "+msg)
+   # bot.send_message(message.chat.id,"🦜 says: "+msg)
     voice = open('audio.mp3', 'rb')
+    if(msg==tos.s):
+        voice = open('audio1.mp3', 'rb')
     bot.send_voice(message.chat.id, voice)
     
 if config.ENV == "DEV":
