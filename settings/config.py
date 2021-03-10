@@ -1,5 +1,5 @@
 import os
-ENV = "DEV" 
+ENV = "PROD" 
 if ENV == "DEV":
     from settings import keys
     telegram_key = keys.telegram_key
